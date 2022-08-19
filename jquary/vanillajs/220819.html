@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 200px;
+            height: auto;
+            background-color: #efefef;
+            margin: 100px auto;
+        }
+        div {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>회원가입</h2>
+        <div>
+            <input id="id" type="text" placeholder="아이디">
+        </div>
+        <div>
+            <input id="pw1" type="password" placeholder="비밀번호">
+        </div>
+        <div>
+            <input id="pw2" type="password" placeholder="비밀번호 재입력">
+        </div>
+        <div>
+            <button onclick="doJoin()">회원가입</button>
+        </div>
+
+    </div>
+
+</body>
+<script>
+    // 자바스크립트는 1년마다 업데이트 됨. 지금 쓰는건 4버전(or 5버전), 현재 9버전(or 10버전)까지 나옴
+    function doJoin() {
+        // alert : 알람창
+        // const PI = 3.14;  =>  정해진 상수를 얘기함 const (상수값, 국가이름 정도만 대문자를 씀 ex) PI(파이), KOR(대한민국))
+        // 문제 1. input 아이디에 입력된 값을 alert창에 출력!
+        var id = document.getElementById("id").value;
+        var pw1 = document.getElementById("pw1").value;
+        var pw2 = document.getElementById("pw2").value;
+        // document : html 뜻 함
+        // getElementById : 아이디 이름으로 태그를 가져온다.
+        // value : 값
+        // alert('ID : '+id);
+        // 문제 2. 비밀번호와 비밀번호 재입력 콘솔(console.log();)로 출력
+        console.log('Password : '+pw1);
+        console.log('Password Check : '+pw2);
+
+        // 문제 3. 비밀번호와 비밀번호 재입력이 다르면
+        // 비밀번호가 일치하지 않습니다. alert 출력
+        if(pw1 != pw2) {
+            alert('비밀번호가 일치하지 않습니다.'); return false;
+        }
+        // 자바스크립트는 기본적으로 문자 길이를 제공해준다.
+        console.log(pw1.length); // 문자 길이가 출력 됨!
+        if(pw1.length < 5) {
+            alert('비밀번호는 최소 6글자 이상 입력해야 함!'); return false;
+        }
+    }
+</script>
+</html>
